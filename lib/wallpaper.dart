@@ -58,11 +58,9 @@ class _WallpaperScreenState extends State<WallpaperScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Expanded(
-              child: Container(
+    return Column(
+      children: [
+        Expanded(
             child: GridView.builder(
                 itemCount: images.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -90,28 +88,26 @@ class _WallpaperScreenState extends State<WallpaperScreen> {
                       ),
                     ),
                   );
-                }),
-          )),
-          Material(
-            child: InkWell(
-              onTap: () {
-                loadMore();
-              },
-              child: Container(
-                height: 60,
-                width: double.infinity,
-                color: Colors.black,
-                child: const Center(
-                  child: Text(
-                    'load more',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
+                })),
+        Material(
+          child: InkWell(
+            onTap: () {
+              loadMore();
+            },
+            child: Container(
+              height: 60,
+              width: double.infinity,
+              color: Colors.black,
+              child: const Center(
+                child: Text(
+                  'load more',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
 }

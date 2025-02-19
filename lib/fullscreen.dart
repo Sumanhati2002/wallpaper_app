@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
@@ -22,33 +21,29 @@ class _FullScreenState extends State<FullScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: [
-            Expanded(
-                child: Container(
-              child: Image.network(widget.imageUrl),
-            )),
-            Material(
-              child: InkWell(
-                onTap: () {
-                  setWallpaper();
-                },
-                child: Container(
-                  height: 60,
-                  width: double.infinity,
-                  color: Colors.black,
-                  child: const Center(
-                    child: Text(
-                      'set as wallpaper',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
+      body: Column(
+        children: [
+          Expanded(
+              child: Image.network(widget.imageUrl)),
+          Material(
+            child: InkWell(
+              onTap: () {
+                setWallpaper();
+              },
+              child: Container(
+                height: 60,
+                width: double.infinity,
+                color: Colors.black,
+                child: const Center(
+                  child: Text(
+                    'set as wallpaper',
+                    style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
